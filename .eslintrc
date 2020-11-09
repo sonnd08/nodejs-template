@@ -1,22 +1,30 @@
 {
-  "extends": "airbnb",
-  "env": {
-    "node": true,
-    "mocha": true,
-    "es6": true
-  },
+  "extends": ["react-app", "prettier"],
+  "plugins": ["prettier"],
   "rules": {
-    // disable requiring trailing commas
-    "comma-dangle": 0,
-    "max-len": [
-      "error",
+    "prettier/prettier": "warn",
+    "import/order": [
+      "warn",
       {
-        "code": 120,
-        "ignoreComments": true,
-        "ignoreUrls": true,
-        "ignoreStrings": true
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ]
       }
     ],
-    "no-unused-vars": ["error", { "argsIgnorePattern": "next" }]
+    "no-console": "warn",
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "react/no-danger": "warn"
   }
 }

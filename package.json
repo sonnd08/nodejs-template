@@ -4,6 +4,9 @@
   "description": "",
   "private": true,
   "main": "app.js",
+  "engines": {
+    "node": ">=14.15.0"
+  },
   "scripts": {
     "start": "NODE_PATH=./ node -r esm ./bin/start",
     "dev": "NODE_PATH=./ nodemon -r esm ./bin/start",

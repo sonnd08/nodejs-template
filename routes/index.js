@@ -1,12 +1,17 @@
 import { Router } from 'express';
+import pingRoute from 'routes/ping';
+import sendJson from 'utils/sendJson';
 
-const router = Router();
+const indexRouter = Router();
 
 /* GET index page. */
-router.get('/', (req, res) => {
-  res.render('index', {
-    title: 'Express',
-  });
+indexRouter.get('/', (req, res) => {
+  sendJson({ res, message: 'OK' });
 });
 
-export default router;
+function handleRouters(app) {
+  app.use('/', indexRouter);
+  app.use('/ping', pingRoute);
+}
+
+export default handleRouters;

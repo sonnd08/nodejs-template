@@ -8,13 +8,14 @@
     "node": ">=14.15.0"
   },
   "scripts": {
-    "start": "NODE_PATH=./ node -r esm ./bin/start",
-    "dev": "NODE_PATH=./ nodemon -r esm ./bin/start",
+    "start": "NODE_ENV=production NODE_PATH=./ node -r esm -r dotenv/config ./bin/start",
+    "dev": "NODE_PATH=./ nodemon -r esm -r dotenv/config ./bin/start",
     "eslint": "eslint --fix ./"
   },
   "dependencies": {
     "cookie-parser": "^1.4.4",
     "debug": "^4.1.1",
+    "dotenv": "^10.0.0",
     "ejs": "^3.1.5",
     "esm": "^3.2.25",
     "express": "^4.17.1",
